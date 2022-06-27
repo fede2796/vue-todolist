@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Area di input */
+.input{
+    padding: 50px;
+    text-align: center;
+}
+.input input{
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 3px solid black;
+    width: 400px;
+}
+
+.input button {
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: 2px solid black;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Todo Container Area*/
+.container {
+    width: 70%;
+    margin: auto;
+    background-color: #F5F7F7;
+    padding: 25px;
+    border-radius: 10px;
+}
+.todolist {
+    list-style-type: none;
+}
+.todolist .todo {
+    border-bottom: 2px solid #e8ebed;
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.todolist .todo .actions span {
+    cursor: pointer;
+}
+
+
+/* linea */
+.text-line-through{
+    text-decoration: line-through;
+}

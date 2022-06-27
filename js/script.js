@@ -18,41 +18,43 @@ var app = new Vue(
     {
         el: '#root',
         data: {
-            copiaobj: [],
-            todoobj: [],
-            newtodo: '',
-            todo: [
+            
+            copyTodoObj: {},
+            newTodoObj: {},
+            newTodoText: '',
+            todos: [
+                {
+                    text: 'Fare i compiti',
+                    done: false,
+                },
                 {
                     text: 'Fare la spesa',
                     done: true,
                 },
                 {
-                    text:'Fare la lavatrice',
+                    text: 'Fare il bucato',
                     done: false,
-                },
-                {
-                    text:'Fare merenda',
-                    done: true,
                 }
             ]
-        }
-    },
-
-    methods, {
-        //Creazione nuovo membro della lista
-        addtodo(){
-            if(this.newtodo.lenght > 0){
-
-                //creo l'oggetto
-                this.todoobj = {
-                    'text': this.newtodo,
-                    'done': false,
+        },
+        methods: {
+            addNewTodo() {
+                if(this.newTodoText.length > 0) {
+                    
+                    // creo l'obj
+                    this.newTodoObj = {
+                        'text': this.newTodoText,
+                        'done': false,
+                    };
+                    // creo una copia dell'array e lo pusho nell'array text
+                    this.copyTodoObj = {...this.newTodoObj};
+                    this.todos.push(this.copyTodoObj);
+                    this.newTodoText = '';
                 }
-                //creo una copia dell'array e lo pusho dentro a newtodo
-                 this.copiaobj = {...this.newtodo}
-                this.todo.push(this.copiaobj);
-                this.newtodo = '';
-            }
+            },
+            removeTodo(index) {
+                this.todos.splice(index, 1);
+            },
         }
     }
-)
+);
