@@ -18,7 +18,9 @@ var app = new Vue(
     {
         el: '#root',
         data: {
-
+            copiaobj: [],
+            todoobj: [],
+            newtodo: '',
             todo: [
                 {
                     text: 'Fare la spesa',
@@ -37,9 +39,19 @@ var app = new Vue(
     },
 
     methods, {
+        //Creazione nuovo membro della lista
         addtodo(){
-            if(){
-                
+            if(this.newtodo.lenght > 0){
+
+                //creo l'oggetto
+                this.todoobj = {
+                    'text': this.newtodo,
+                    'done': false,
+                }
+                //creo una copia dell'array e lo pusho dentro a newtodo
+                 this.copiaobj = {...this.newtodo}
+                this.todo.push(this.copiaobj);
+                this.newtodo = '';
             }
         }
     }
